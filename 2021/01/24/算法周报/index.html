@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="算法周报（1.17-1.24）学习内容：stllist双向链表。只支持双向顺序访问。在list中任何位置进行插入、删除操作速度都很快。 适用于少量读写，大量插入，删除的情况。 用法总结 头文件#include 声明及初始化 list l;容量l.empty();          &#x2F;&#x2F;判空元素的访问    l.front();                       &#x2F;&#x2F; 取队头元素    l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://shangningsimida.github.io/2021/01/24/%E7%AE%97%E6%B3%95%E5%91%A8%E6%8A%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="算法周报（1.17-1.24）学习内容：stllist双向链表。只支持双向顺序访问。在list中任何位置进行插入、删除操作速度都很快。 适用于少量读写，大量插入，删除的情况。 用法总结 头文件#include 声明及初始化 list l;容量l.empty();          &#x2F;&#x2F;判空元素的访问    l.front();                       &#x2F;&#x2F; 取队头元素    l">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-24T09:45:38.229Z">
+<meta property="article:modified_time" content="2021-01-24T09:39:14.253Z">
+<meta property="article:author" content="shangningsimida">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shangningsimida.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-算法周报" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/24/%E7%AE%97%E6%B3%95%E5%91%A8%E6%8A%A5/" class="article-date">
+  <time class="dt-published" datetime="2021-01-24T09:45:38.229Z" itemprop="datePublished">2021-01-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>算法周报（1.17-1.24）<br>学习内容：stl<br>list<br>双向链表。只支持双向顺序访问。在list中任何位置进行插入、删除操作速度都很快。</p>
+<p>适用于少量读写，大量插入，删除的情况。</p>
+<p>用法总结</p>
+<p>头文件<br>#include <list><br>声明及初始化<br> list<int> l;<br>容量<br>l.empty();          //判空<br>元素的访问<br>    l.front();                       // 取队头元素<br>    l.back();                        // 取队尾元素<br>修改<br>  l.push_back();                        // 尾后压入元素<br>  l.push_front();                       // 队头压入元素</p>
+<p>  l.pop_back();                         // 尾后弹出一个元素<br>  l.pop_front();                        // 队头弹出一个元素</p>
+<p>  l.insert(l.begin(), 88);              // 某个位置插入元素(性能好)</p>
+<p>  l.remove(2);                          // 删除某个元素(和所给值相同的都删除)<br>  l.erase(–l.end());                   // 删除某个位置的元素(性能好)<br>算法<br>遍历<br>list<int>::iterator it;  </p>
+<p>for(it = l.begin(); it!=l.end(); it++)<br>    {<br>        cout&lt;&lt;*it&lt;&lt;endl;<br>    }<br>排序<br>l.sort();           //注意与vector的排序使用方法不一样<br>翻转<br>l.reverse();                                // 倒置所有元素<br>forward_list<br>单向链表。只支持单向顺序访问。在链表的任何位置进行插入、删除操作都很快。</p>
+<p>用法总结</p>
+<p>与list用法基本一致，用的也不多，先稍微总结下，没有认真总结。</p>
+<p>头文件<br>声明及初始化<br>forward_list<int> fl = {1, 2, 3, 4, 5, 6, 7, 8, 9};<br>容量<br>元素的访问<br>    auto prev = fl.before_begin();    // 表示fl的”首前元素”<br>    auto curr = fl.begin();            // 表示fl的第一个元素<br>修改<br>fl.push_front(0);                // 压入元素，该容器没有push_back方法<br>算法<br>遍历<br>排序<br>fl.sort();<br>翻转<br>deque<br>双端队列。支持快速随机访问。在头尾位置插入、删除速度很快。</p>
+<p>deque折中了vector和list， 如果你需要随机存取又关心数据的插入和删除，那么可以选择deque。</p>
+<p>用法总结</p>
+<p>头文件<br>#include <deque><br>声明及初始化<br>deque<int> d1;<br>容量<br>dl.empty()        //判空<br>元素的访问<br>    d1.front();                           // 取队头元素<br>    d1.back();                            // 取队尾元素<br>修改<br>    d1.push_back();                       // 尾后压入元素<br>    d1.push_front(4);                     // 队头压入元素</p>
+<pre><code>d1.pop_back();                        // 尾后弹出一个元素
+d1.pop_front();                       // 队头弹出一个元素</code></pre>
+<p>算法<br>遍历<br>for(it = dl.begin(); it!=dl.end(); it++)   //迭代输出<br>    {<br>        cout&lt;&lt;*it&lt;&lt;endl;<br>    }<br>排序<br>sort(dl.begin(), dl.end());<br>翻转<br>reverse(dl.begin(), dl.end());<br>array<br>固定大小数组。支持快速随机访问。不能添加或者删除元素。</p>
+<p>array一般用来代替原生的数组。</p>
+<p>用法总结</p>
+<p>头文件<br>声明及初始化<br>  array&lt;int, 5&gt; myArray1 = { 1, 2, 3, 4, 5 };    // 定义一个一维数组<br> array&lt;array&lt;int, 2&gt;, 3&gt; myArray2 = {1, 2, 3, 4, 5, 6};    // 定义一个二维数组<br>  array&lt;int, 5&gt; myArray4;                // 此数组并未初始化<br>容量<br>    // array.resize();        // array 不能有改变容器大小的操作，它的效率比vector高<br>元素的访问<br>修改<br>    myArray1.swap(myArray3);// 交换两个数组的的元素<br>    myArray4 = myArray1;    // 支持直接这样赋值，原生的数组不可以这样。它把值全部复制过去，而不是引用<br>    myArray1.assign(0);        // 把myArray1的元素全部置为0<br>算法<br>遍历<br>// 遍历数组元素<br>    for (int i = 0; i &lt; myArray1.size(); ++i)<br>    {<br>        cout &lt;&lt; myArray1[i] &lt;&lt; endl;<br>    }<br>排序<br>翻转<br>string<br>与vector相似的容器，但专门用于保存字符。随机访问快，在尾部插入删除快。</p>
+<p>string用于和字符串操作有关的一些情况，也是实际开发中应用最多的。</p>
+<p>用法总结</p>
+<p>头文件<br>#include <string><br>声明及初始化<br>    string str1 = “Hello Ace”;            // string的几种构造方法<br>    string str2(“Hello World”);<br>    string str3(str1, 6);                // 从str1下标6开始构造， str3 -&gt; Ace<br>容量<br>元素的访问<br>修改<br> string str4 = str2.substr(0, 5);    // 求子串： str4 -&gt; Hello<br> string str5 = str2.substr(6);        // 求子串： str5 -&gt; World<br> string str6 = str2.substr(6, 11);    // 求子串： str6 -&gt; World</p>
+<p> string str8 = str2.replace(6, 5, “Game”);    // 替换：str8 -&gt; Hello Game 从位置6开始，删除5个字符，并替换成”Game”</p>
+<p> string str9 = str2.append(“, Hello Beauty”);// 追加字符串： str9 -&gt; Hello World, Hello Beauty</p>
+<p>  auto pos1 = str1.find(“Ace”);    // 查找字符串:pos1 -&gt; 6 ,返回第一次出现字符串的位置，如果没找着，则返回npos</p>
+<p>  int res = str1.compare(“Hello, Ace”);        // 比较字符串： res -&gt; -1, 根据str1是等于、大于还是小于参数指定的字符串， 返回0、整数或者负数<br>算法<br>遍历<br>排序<br>翻转<br>关联容器<br>关联容器支持高效的关键字查询和访问。标准库一共定义了8个关联容器，最主要的类型是map和set。8个容器中，每个容器：</p>
+<p>是一个map或者是一个set。map保存关键字-值对；set只保存关键字。<br>要求关键字唯一或者不要求。<br>保持关键字有序或者不保证有序。<br>以下是八个常用的容器类：</p>
+<p>set / unordered_set</p>
+<p>map / unordered_map</p>
+<p>multiset / unordered_multiset<br>multimap / unordered_multimap<br>从名字中就可以看出是否唯一、是否有序，允许重复关键字的容器名字都包含“multi”，不是有序容器的集合都包含“unordered”。</p>
+<p>所以set 和map都是有序且无重复元素的。</p>
+<p>用法总结<br>set用法</p>
+<p>头文件<br>#include <set><br>声明及初始化<br>set<int> s;<br>容量<br>empty() 　　　 //判断set容器是否为空<br>size() 　　　　//返回当前set容器中的元素个数<br>max_size() 　 //返回set容器可能包含的元素最大个数<br>元素的访问<br>begin()     　　 //返回set容器的第一个元素<br>end() 　　　　   //返回set容器的最后一个元素<br>修改<br>erase(iterator)  //删除定位器iterator指向的值<br>erase(first,second)    //删除定位器first和second之间的值<br>erase(key_value)    //删除键值key_value的值</p>
+<p>insert(key_value)   //将key_value插入到set中<br>insert(first,second)   //将定位器first到second之间的元素插入到set中<br>6.算法</p>
+<p>遍历<br>set<int>::iterator it;  //声明迭代器<br>for(it = s.begin(); it!=s.end(); it++)   //迭代输出<br>    {<br>        cout&lt;&lt;*it&lt;&lt;endl;<br>    }<br>排序<br>set本身就是有序的。<br>翻转<br>reverse(s.begin(), s.end());  //翻转<br>map用法</p>
+<p>头文件<br>#include <map><br>声明及初始化<br>map&lt;string,int&gt;   my_Map;<br>容量<br>my_Map.size()           //返回元素数目<br>my_Map.empty()          //判断是否为空<br>my_Map.clear()          //清空所有元素<br>元素的访问<br>int i = my_Map[“a”]; </p>
+<p>MY_MAP::iterator   my_Itr;<br>my_Itr.find(“b”);<br>int j = my_Itr-&gt;second;       //first返回键，second返回值</p>
+<p>5.修改</p>
+<p>//插入数据<br>my_Map[“a”]；        //只插入键，对应的值默认为0<br>my_Map[“a”] = 1;    //同时插入键和值</p>
+<p>my_Map.insert(map&lt;string,int&gt;::value_type(“b”,2));<br>my_Map.insert(pair&lt;string,int&gt;(“c”,3));<br>my_Map.insert(make_pair&lt;string,int&gt;(“d”,4)); </p>
+<p>//删除数据<br>my_Map.erase(my_Itr);<br>MY_MAP::iterator   my_Itr; </p>
+<p>my_Map.erase(“c”);<br>6.算法</p>
+<p>遍历<br>map&lt;string,int&gt;::iterator it;  //声明迭代器<br>    for(it = p.begin(); it!=p.end(); it++)   //迭代输出<br>    {<br>        cout&lt;<it->first&lt;<it->second&lt;&lt;endl;<br>    }<br>排序<br>map本身就是有序的<br>翻转</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shangningsimida.github.io/2021/01/24/%E7%AE%97%E6%B3%95%E5%91%A8%E6%8A%A5/" data-id="ckkayiqwg0000b8vfa1j1euf4" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/23/%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">学习报告</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/24/%E7%AE%97%E6%B3%95%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/23/%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/">学习报告</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 shangningsimida<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
