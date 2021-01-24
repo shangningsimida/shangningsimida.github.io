@@ -6,13 +6,15 @@
   
   <title>学习报告 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="学习报告（1.17-1.24）学习内容：c++ 冒泡排序public static void ArraySortTest() {     int[] ages&#x3D; &amp;#123;21,27,31,19,50,32,16,25&amp;#125;;     System.out.println(Arrays.toString(ages));     &#x2F;&#x2F;控制比较轮数     for(int i&#x3D;1;i&lt;a">
+<meta property="og:type" content="article">
 <meta property="og:title" content="学习报告">
 <meta property="og:url" content="https://shangningsimida.github.io/2021/01/23/%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="学习报告（1.17-1.24）学习内容：c++ 冒泡排序public static void ArraySortTest() {     int[] ages&#x3D; &amp;#123;21,27,31,19,50,32,16,25&amp;#125;;     System.out.println(Arrays.toString(ages));     &#x2F;&#x2F;控制比较轮数     for(int i&#x3D;1;i&lt;a">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-22T16:17:12.000Z">
-<meta property="article:modified_time" content="2021-01-22T16:19:29.113Z">
+<meta property="article:modified_time" content="2021-01-23T18:20:51.740Z">
 <meta property="article:author" content="shangningsimida">
 <meta name="twitter:card" content="summary">
   
@@ -93,7 +95,122 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>学习报告（1.17-1.24）<br>学习内容：c++</p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>public static void ArraySortTest() {</p>
+<pre><code>    int[] ages= &#123;21,27,31,19,50,32,16,25&#125;;
+    System.out.println(Arrays.toString(ages));
+    //控制比较轮数
+    for(int i=1;i&lt;ages.length;i++) &#123;
+        //每轮比较多少
+        for(int j=0;j&lt;ages.length-i;j++) &#123;
+            if(ages[j]&gt;ages[j+1]) &#123;
+                int tmp=0;
+                tmp=ages[j];
+                ages[j]=ages[j+1];
+                ages[j+1]=tmp;                    
+            &#125;
+        &#125;
+    &#125;
+    System.out.println(Arrays.toString(ages));
+&#125;
+---</code></pre>
+<h2 id="通讯录系统"><a href="#通讯录系统" class="headerlink" title="通讯录系统"></a>通讯录系统</h2><p>#include <iostream><br>#include <algorithm><br>#include <cstring><br>#include <cstdlib><br>#include <string><br>#include <vector><br>#include <fstream><br>#include&lt;windows.h&gt;//后面变颜色用的<br>using namespace std;<br>static int n=0;    //记录输入的数据的个数<br>#define limit 100  //就是通讯录的存储空间<br>class PostCodedress<br>{<br>public:<br>    struct xinxi<br>    {<br>        int id;          //编号顺序<br>        char Name[20];<br>        char Phone[20];<br>        char PostCodedr[100];//地址<br>        char Email[20];<br>        char PostCode[100];//数组的话，注意初始化<br>    }xx;<br>    void zengPostCodedress();  //增加信息；<br>    int cc(char na[]);         //看输入的名字是不是重复；<br>};<br>void PostCodedress::zengPostCodedress()//增加信息的<br>{<br>    for(int i = 1;i&lt;=5;i++)<br>    {<br>        if(i==1)<br>        {<br>            cout&lt;&lt;”请输入联系人的姓名： “&lt;&lt;endl;<br>            cin&gt;&gt;xx.Name;<br>        }<br>        if(i==2)<br>        {<br>            cout&lt;&lt;”请输入联系人的电话号码：  “&lt;&lt;endl;<br>            cin&gt;&gt;xx.Phone;<br>        }<br>        if(i==3)<br>        {<br>            cout&lt;&lt;”请输入联系人的地址： “&lt;&lt;endl;<br>            cin&gt;&gt;xx.PostCodedr;<br>        }<br>        if(i==4)<br>        {<br>            cout&lt;&lt;”请输入联系人的电子邮件:  “&lt;&lt;endl;<br>            cin&gt;&gt;xx.Email;<br>        }<br>        if(i==5)<br>        {<br>            cout&lt;&lt;”请输入联系人的邮编： “&lt;&lt;endl;<br>            cin&gt;&gt;xx.PostCode;<br>        }<br>     }<br>}<br>void color(int a)//设置颜色的，学生特地专门研究了下，windows库函数<br>{<br>    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),a);<br>}<br>int PostCodedress::cc(char na[])<br>{<br>    if(strcmp(na,xx.Name)==0)<br>        return 1;<br>    else return 0;<br>}<br>PostCodedress B[10];<br>class POSTCODEDRESDBOOK:public PostCodedress    //对信息进行排序，并且写进文件，打开文件；<br>{<br>public:<br>    void searchPostCodedress1(char nu[]);//根据电话号码查找联系人；<br>    void searchPostCodedress2(char na[]);//根据姓名查找联系人；<br>    void Save();      //实现保存功能；<br>    void Put();  //增加的信息写入文件<br>    void RePostCode();     //打开文件，显示信息<br>    void display();     //浏览功能，显示信息；<br>    void Delete();    //删除功能；<br>};<br>void POSTCODEDRESDBOOK::searchPostCodedress1(char nu[])//根据电话号码查找联系人；<br>{<br>    int i;<br>    if(n==0)<br>    {<br>        cout&lt;&lt;”查无此人”&lt;&lt;endl;<br>    }else<br>    {<br>        for(i=0;i&lt;n;i++)<br>        {<br>            if(strcmp(nu,B[i].xx.Phone)==0)<br>            {   cout&lt;&lt;B[i].xx.id&lt;&lt;” “&lt;&lt;B[i].xx.Name&lt;&lt;” “&lt;&lt;B[i].xx.Phone&lt;&lt;” “&lt;&lt;B[i].xx.PostCodedr&lt;&lt;” “&lt;&lt;B[i].xx.Email&lt;&lt;” “&lt;&lt;B[i].xx.PostCode&lt;&lt;endl;<br>                break;<br>            }<br>            else if(strcmp(nu,B[i].xx.Phone)!=0 &amp;&amp; i==n-1)<br>            {<br>                cout&lt;&lt;”查无此人”&lt;&lt;endl;<br>                break;<br>            }</p>
+<pre><code>    &#125;
+&#125;</code></pre>
+<p>}<br>void POSTCODEDRESDBOOK::searchPostCodedress2(char na[])//根据姓名查找联系人；<br>{<br>    int i;<br>    if(n==0)<br>    {<br>        cout&lt;&lt;”查无此人”&lt;&lt;endl;<br>    }else<br>    {<br>        for(i=0;i&lt;n;i++)<br>        {<br>            if(strcmp(na,B[i].xx.Name)==0)<br>            {   cout&lt;&lt;B[i].xx.id&lt;&lt;” “&lt;&lt;B[i].xx.Name&lt;&lt;” “&lt;&lt;B[i].xx.Phone&lt;&lt;” “&lt;&lt;B[i].xx.PostCodedr&lt;&lt;” “&lt;&lt;B[i].xx.Email&lt;&lt;” “&lt;&lt;B[i].xx.PostCode&lt;&lt;endl;<br>                break;<br>            }<br>            else if(strcmp(na,B[i].xx.Name)!=0 &amp;&amp; i==n-1)<br>            {<br>                cout&lt;&lt;”查无此人”&lt;&lt;endl;<br>                break;<br>            }</p>
+<pre><code>    &#125;
+&#125;</code></pre>
+<p>}<br>void POSTCODEDRESDBOOK::Save()//实现保存功能；<br>{</p>
+<pre><code>ofstream f2(&quot;save_PostCodedress.txt&quot;);
+f2.close();
+remove(&quot;save_PostCodedress.txt&quot;);
+ofstream f3(&quot;save_PostCodedress.txt&quot;);
+
+
+    for(int i=0;i&lt;n;i++)
+    &#123;
+        f3&lt;&lt;B[i].xx.id&lt;&lt;&quot; &quot;&lt;&lt;B[i].xx.Name&lt;&lt;&quot; &quot;&lt;&lt;B[i].xx.Phone&lt;&lt;&quot; &quot;&lt;&lt;B[i].xx.PostCodedr&lt;&lt;&quot; &quot;&lt;&lt;B[i].xx.Email&lt;&lt;endl;
+    &#125;
+    f3.close();</code></pre>
+<p>}<br>void POSTCODEDRESDBOOK::Put()//增加的信息写入文件<br>{<br>    ofstream RePostCode(“xcc.txt”); </p>
+<pre><code>if(!RePostCode)&#123; 
+    cout &lt;&lt; &quot;不能打开文件 &quot;; 
+        exit(1); // terminate with error 
+
+&#125; 
+    color(23);
+    cout&lt;&lt;&quot;这是您输入的第&quot;&lt;&lt;n+1&lt;&lt;&quot;个联系人 &quot;&lt;&lt;endl;
+    for(int i=n;;i++)
+    &#123;
+        if(i==limit)
+        &#123;
+            cout&lt;&lt;&quot;存储空间已满，可选择删除数据再进行输入&quot;&lt;&lt;endl;
+            break;
+        &#125;
+        B[i].zengPostCodedress();
+        for(int j=0;j&lt;n;j++)
+        &#123;
+            if(B[i].cc(B[j].xx.Name))
+            &#123;
+                cout&lt;&lt;&quot;数据录入重复&quot;&lt;&lt;endl;
+                i=i-1;
+                break;
+            &#125;
+        &#125;
+
+        n++;
+
+        B[i].xx.id=n;
+        RePostCode&lt;&lt;B[i].xx.id&lt;&lt;&quot;   &quot;&lt;&lt;B[i].xx.Name&lt;&lt;&quot;    &quot;&lt;&lt;B[i].xx.Phone&lt;&lt;&quot;    &quot;&lt;&lt;B[i].xx.PostCodedr&lt;&lt;&quot;    &quot;&lt;&lt;B[i].xx.Email&lt;&lt;&quot;    &quot;&lt;&lt;B[i].xx.PostCode&lt;&lt;endl;
+        char q;
+        cout&lt;&lt;&quot;选择是否继续输入（y/n）&quot;&lt;&lt;endl;
+        cin&gt;&gt;q;
+        if(q==&#39;n&#39;)
+            break;
+        if(q==&#39;y&#39;)
+            continue;
+
+    &#125;
+RePostCode.close();</code></pre>
+<p>}<br>void POSTCODEDRESDBOOK::RePostCode()//输出文件<br>{<br>    fstream Myfile(“xcc.txt”);<br>    if(!Myfile)    //判断是否成功打开文件<br>    {<br>        cerr&lt;&lt;”open error!”&lt;&lt;endl;<br>        abort();<br>    }<br>    string temp;<br>    while(getline(Myfile,temp))<br>   {<br>        cout&lt;&lt;temp&lt;&lt;endl;<br>   }<br>   Myfile.close();</p>
+<p>}<br>void POSTCODEDRESDBOOK::display()//显示当前联系人<br>{<br>    color(03);<br>    cout&lt;&lt;”当前通讯录联系人有:”&lt;&lt;n&lt;&lt;”个     “&lt;&lt;endl&lt;&lt;”通讯录中最多可以添加”&lt;&lt;100-n&lt;&lt;”个联系人”&lt;&lt;endl;<br>    cout&lt;&lt;”联系人如下： “ &lt;&lt;endl;<br>    for(int i=0;i&lt;n;i++)<br>    {<br>        cout&lt;&lt;B[i].xx.id&lt;&lt;”    “&lt;&lt;B[i].xx.Name&lt;&lt;”    “&lt;&lt;B[i].xx.Phone&lt;&lt;”    “&lt;&lt;B[i].xx.PostCodedr&lt;&lt;”    “&lt;&lt;B[i].xx.Email&lt;&lt;”    “&lt;&lt;B[i].xx.PostCode&lt;&lt;endl;<br>    }<br>    cout&lt;&lt;endl;<br>}<br>void POSTCODEDRESDBOOK::Delete()//删除联系人<br>{<br>    char na[20];<br>    cout&lt;&lt;”输入你要删除的人的名字”&lt;&lt;endl;<br>    cin&gt;&gt;na;<br>    int j;<br>    for(int i=0;i&lt;n;i++)<br>    {<br>        if(strcmp(na,B[i].xx.Name)==0)<br>        {<br>            j=i;<br>            break;<br>        }<br>    }</p>
+<pre><code>for(int i1=j;i1&lt;n-1;i1++)
+&#123;
+    B[i1]=B[i1+1];
+    B[i1].xx.id=i1;
+&#125;
+n--;
+fstream Myfile(&quot;xcc.txt&quot;);
+ofstream f2(&quot;tmp2.txt&quot;); 
+
+
+for(int i3=0;i3&lt;n;i3++)
+        &#123;
+            f2&lt;&lt;B[i3].xx.id&lt;&lt;&quot; &quot;&lt;&lt;B[i3].xx.Name&lt;&lt;&quot; &quot;&lt;&lt;B[i3].xx.Phone&lt;&lt;&quot; &quot;&lt;&lt;B[i3].xx.PostCodedr&lt;&lt;&quot; &quot;&lt;&lt;B[i3].xx.Email&lt;&lt;endl;
+        &#125;
+        Myfile.close();
+        f2.close();
+        remove(&quot;xcc.txt&quot;);
+        rename(&quot;tmp2.txt&quot;,&quot;xcc.txt&quot;);</code></pre>
+<p>}<br>int  main()<br>{<br>    POSTCODEDRESDBOOK P;<br>    char Q;<br>    color(423);<br>    cout&lt;&lt;”*************************                      *******************************”&lt;&lt;endl;<br>    color(465);<br>    cout&lt;&lt;”                        ****** 欢 迎 使 用 本 系 统******                      “;<br>    cout&lt;&lt;endl;<br>    color(448);<br>    cout&lt;&lt;”                          *****制作者  xcc****                        “;<br>    fstream f1(“xcc.txt”);<br>    f1.clear();<br>    f1.close();<br>    while(1)<br>    {<br>        POSTCODEDRESDBOOK p;<br>          color(01);<br>          cout&lt;&lt;” “&lt;&lt;endl;<br>        cout&lt;&lt;”                        ********模拟通讯录*******”&lt;&lt;endl;<br>        color(02);<br>        cout&lt;&lt;”                         *****1.添加联系人*****”&lt;&lt;endl;<br>           color(03);<br>        cout&lt;&lt;”                         *****2.联系人列表*****”&lt;&lt;endl;<br>        color(04);<br>        cout&lt;&lt;”                         *****3.查找联系人*****”&lt;&lt;endl;<br>        color(05);<br>        cout&lt;&lt;”                         *****4.删除联系人*****”&lt;&lt;endl;<br>        color(06);<br>        cout&lt;&lt;”                         *****5.通讯录存盘*****”&lt;&lt;endl;<br>        color(07);<br>        cout&lt;&lt;”                         *****6.读出通讯录*****”&lt;&lt;endl;<br>        color(8);<br>        cout&lt;&lt;”                         *****7.退出      *****”&lt;&lt;endl;<br>        color(9);<br>        cout&lt;&lt;”*************************                      *******************************”&lt;&lt;endl;<br>        int q;<br>        cout&lt;&lt;”请选择操作:”&lt;&lt;endl;<br>        cin&gt;&gt;q;<br>        switch(q)<br>        {<br>        case 1:<br>            p.display();<br>            p.Put();<br>            break;<br>        case 2:<br>            p.display();<br>            break;<br>        case 3:<br>            p.display();<br>            char h[11];<br>            cout&lt;&lt;”输入你要按号码（h）查找还是按姓名（m）查找:”&lt;&lt;endl;<br>               char z;<br>               cin&gt;&gt;z;<br>              if(z==’h’)<br>             {<br>                char h[11];<br>                cout&lt;&lt;”输入你要查找的号码:”&lt;&lt;endl;<br>                cin&gt;&gt;h;<br>                p.searchPostCodedress1(h);<br>               }<br>            if(z==’m’)<br>            {<br>                char m[20];<br>                cout&lt;&lt;”输入你要查找的姓名:”&lt;&lt;endl;<br>                cin&gt;&gt;m;<br>                p.searchPostCodedress2(m);<br>            }<br>            break;<br>        case 4:<br>            p.display();<br>            p.Delete();<br>            break;<br>        case 5:<br>            p.display();<br>            p.Save();<br>            break;<br>        case 6:<br>            p.display();<br>            p.RePostCode();<br>            break;<br>        case 7:<br>            break;<br>        }<br>        cout&lt;&lt;”请问是否继续使用系统? 是(y) 否(n)”&lt;&lt;endl;<br>        cin&gt;&gt;Q;<br>        if(Q==’y’)<br>            continue;<br>        if(Q==’n’)<br>            break;<br>    }</p>
+<pre><code>return 0;</code></pre>
+<h2 id=""><a href="#" class="headerlink" title="}"></a>}</h2><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><h3 id="场景一"><a href="#场景一" class="headerlink" title="场景一"></a>场景一</h3><p> 一、同步指针：从两端向中间迭代数组。<br> 典型例子 反转数组中的元素。<br>其思想是将第一个元素与末尾进行交换，再向前移动到下一个元素，并不断地交换，直到它到达中间位置。</p>
+<p>我们可以同时使用两个指针来完成迭代：一个从第一个元素开始，另一个从最后一个元素开始。持续交换它们所指向的元素，直到这两个指针相遇。</p>
+<p>void reverse(int *v, int N) {<br>    int i = 0;<br>    int j = N - 1;<br>    while (i &lt; j) {<br>        swap(v[i], v[j]);<br>        i++;<br>        j–;<br>    }<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>场景一总结<br>这时你可以使用双指针技巧：<br>一个指针从始端开始，而另一个指针从末端开始。<br>值得注意的是，这种技巧经常在排序数组中使用。</p>
+<h3 id="场景二"><a href="#场景二" class="headerlink" title="场景二"></a>场景二</h3><p>有时，我们可以使用两个不同步的指针来解决问题。</p>
+<p>示例<br>让我们从另一个经典问题开始：</p>
+<p>给定一个数组和一个值，原地删除该值的所有实例并返回新的长度。<br>1<br>如果我们没有空间复杂度上的限制，那就更容易了。我们可以初始化一个新的数组来存储答案。如果元素不等于给定的目标值，则迭代原始数组并将元素添加到新的数组中。</p>
+<p>实际上，它相当于使用了两个指针，一个用于原始数组的迭代，另一个总是指向新数组的最后一个位置。</p>
+<p>重新考虑空间限制</p>
+<p>现在让我们重新考虑空间受到限制的情况。</p>
+<p>我们可以采用类似的策略，我们继续使用两个指针：一个仍然用于迭代，而第二个指针总是指向下一次添加的位置。</p>
+<p>以下代码可以供你参考：</p>
+<p>int removeElement(vector<int>&amp; nums, int val) {<br>    int k = 0;<br>    for (int i = 0; i &lt; nums.size(); ++i) {<br>        if (nums[i] != val) {<br>            nums[k] = nums[i];<br>            ++k;<br>        }<br>    }<br>    return k;<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>在上面的例子中，我们使用两个指针，一个快指针 i 和一个慢指针 k 。i 每次移动一步，而 k 只在添加新的被需要的值时才移动一步。</p>
+<p>场景二总结<br>这是你需要使用双指针技巧的一种非常常见的情况：</p>
+<p>同时有一个慢指针和一个快指针。<br>解决这类问题的关键是</p>
+<p>确定两个指针的移动策略。<br>与前一个场景类似，你有时可能需要在使用双指针技巧之前对数组进行排序，也可能需要运用贪心想法来决定你的运动策略。</p>
+<h2 id="读文件-写文件"><a href="#读文件-写文件" class="headerlink" title="读文件 写文件"></a>读文件 写文件</h2><p>#include <iostream><br>#include <fstream><br>#include <cstdlib> //qsort在此头文件中声明<br>using namespace std;<br>const int MAX_NUM = 1000;<br>int a[MAX_NUM]; //存放文件中读入的整数<br>int MyCompare(const void * e1, const void * e2)<br>{ //用于qsort的比较函数<br>     return *((int *)e1) - *((int *)e2);<br>}<br>int main()<br>{<br>    int total = 0;//读入的整数个数<br>    ifstream srcFile(“in.txt”,ios::in); //以文本模式打开in.txt备读<br>    if(!srcFile) { //打开失败<br>        cout &lt;&lt; “error opening source file.” &lt;&lt; endl;<br>        return 0;<br>    }<br>    ofstream destFile(“out.txt”,ios::out); //以文本模式打开out.txt备写<br>    if(!destFile) {<br>        srcFile.close(); //程序结束前不能忘记关闭以前打开过的文件<br>        cout &lt;&lt; “error opening destination file.” &lt;&lt; endl;<br>        return 0;<br>    }<br>    int x;<br>    while(srcFile &gt;&gt; x) //可以像用cin那样用ifstream对象<br>        a[total++] = x;<br>    qsort(a,total,sizeof(int),MyCompare); //排序<br>    for(int i = 0;i &lt; total; ++i)<br>        destFile &lt;&lt; a[i] &lt;&lt; “ “; //可以像用cout那样用ofstream对象<br>    destFile.close();<br>    srcFile.close();<br>    return 0;<br>}</p>
+
       
     </div>
     <footer class="article-footer">
