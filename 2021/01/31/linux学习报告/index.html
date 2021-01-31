@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="linux学习报告（1.24-1.31）1.常见操作系统  服务端操作系统 ： linux、unix、windows server  单机操作系统 ： windows（dos 、ucdos、win95、win98、win2000、xp、vista、win7、win8）            MAC 、linux（ubuntu）  移动操作系统 Android、IOS 、Windows phone">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://shangningsimida.github.io/2021/01/31/linux%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="linux学习报告（1.24-1.31）1.常见操作系统  服务端操作系统 ： linux、unix、windows server  单机操作系统 ： windows（dos 、ucdos、win95、win98、win2000、xp、vista、win7、win8）            MAC 、linux（ubuntu）  移动操作系统 Android、IOS 、Windows phone">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-31T06:01:03.091Z">
+<meta property="article:modified_time" content="2021-01-31T06:03:25.766Z">
+<meta property="article:author" content="shangningsimida">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shangningsimida.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-linux学习报告" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/31/linux%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/" class="article-date">
+  <time class="dt-published" datetime="2021-01-31T06:01:03.091Z" itemprop="datePublished">2021-01-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="linux学习报告"><a href="#linux学习报告" class="headerlink" title="linux学习报告"></a>linux学习报告</h1><p>（1.24-1.31）<br>1.常见操作系统</p>
+<ul>
+<li>服务端操作系统 ： linux、unix、windows server </li>
+<li>单机操作系统 ： windows（dos 、ucdos、win95、win98、win2000、xp、vista、win7、win8）<pre><code>            MAC 、linux（ubuntu）</code></pre>
+</li>
+<li>移动操作系统 Android、IOS 、Windows phone</li>
+</ul>
+<p>2.linux操作系统介绍</p>
+<ul>
+<li>为什么要学习linux操作系统 <ol>
+<li>大部分服务端都采用linux ，JEE部署到服务器中</li>
+<li>一些企业和学校采用linux研发和教学 </li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li>很多嵌入式开发 用linux  <ol start="4">
+<li>云计算、大数据 是集群网  linux : centos </li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>特点   <ol>
+<li>开放、开源、多用户的网络操作系统</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>基于unix（unix–&gt;minix–&gt;linux(linus :林纳斯 芬兰 )），可以定制内核</li>
+<li>假如了GNU组织（自由软件组织 ，copyLeft） ，通过GPL（通用公共许可） 许可对外发布  </li>
+</ol>
+<ul>
+<li>linux组成<ol>
+<li>linux内核（linus 团队管理）</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>shell ：用户与内核交互的接口</li>
+<li>文件系统 ： ext3、ext4 等  windows 有 fat32  、ntfs </li>
+<li>第三方应用软件 </li>
+</ol>
+<ul>
+<li>linux操作系统版本   <ol>
+<li>内核版本 (linus 团队管理)  3.8</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>发行版本  :一些软件公司以内核为基础，再添加一些软件和文档形成发行版本<ul>
+<li>red hat  ： rhel ，centos</li>
+<li>debian   ： debian，ubuntu（桌面）</li>
+<li>android<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>二.安装linux系统</li>
+</ul>
+</li>
+</ol>
+<p>vmware安装 ： 创建虚拟机的软件<br>vitual box ：oracle 公司提供</p>
+<p>虚拟机安装</p>
+<p>直接安装<br>创建虚拟机<br>安装ubuntu镜像<br>打开虚拟机镜像： 虚拟机+操作系统（ubuntu）<br>打开*.vmx 文件<br>用户名 itcast 密码 123<br>三.linux系统环境<br>默认有6个命令交互通道和一个图形界面交互通道，默认进入到的是图形界面通道<br>命令交互模式切换：ctrl+alt+f1—f6<br>图形交互界面 ctrl+alt+f7</p>
+<p>1.图形界面交互模式</p>
+<ul>
+<li>terminal： 图形界面的命令终端，它是图形界面交互通道的延伸，要依赖于图形界面</li>
+</ul>
+<p>2.命令交互模式<br>命令提示符：<br>itcast@ubuntu:~−itcast：用户名−ubuntu：主机名− ：路径，假如当前的路径正好是该用户存放数据的根目录，则显示 − :用户的类型 $代表普通用户 # 代表 超级用户</p>
+<p>3.linux文件系统</p>
+<ul>
+<li>目录结构</li>
+<li>文件权限分析<br>w ：可写   r： 只读  x：可执行  - ：无权限<br>文件权限<ol>
+<li>字符表示法<br>drwxr-xr-x<br>第一个字符 ：文件的类型  - ：普通文件  d：文件夹  c ：串口文件  l ：连接文件<br> 2-4 字符  ： 该文件的属主用户的权限<br>5-7  字符 ： 与属主用户同一组的其他用户的权限<br>8-10 字符 ：  不同组的其他用户的权限</li>
+<li>数字表示法</li>
+</ol>
+ -rw-r–r–   ：文件的默认权限   644<br> drwxr-xr-x   ： 目录的默认权限  755<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>四、linux的常用命令</li>
+</ul>
+<p>1.注销、关机、重启</p>
+<ul>
+<li>注销 ：logout ：登出 、exit</li>
+<li>关机 ：<br>shutdown - h 时间</li>
+<li>h ：关机</li>
+<li>时间 ：</li>
+</ul>
+<ol>
+<li>now :马上</li>
+<li>12.30 ：指定具体时间</li>
+<li>3 ：几分钟以后<br>sudo ： superuser do ：由超级用户来执行该命令<br>要配置sudo 命令 ： 授权 哪些用户能执行哪些命令<br>由超级用户配置 sudo<br>/etc/sudoers<br>sudo shutdown -h now 当前账号：itcast</li>
+</ol>
+<ul>
+<li>重启 ：<br>shutdown -r 时间</li>
+<li>r ：restart</li>
+</ul>
+<p>2.linux基本命令 ：文件操作命令</p>
+<ol>
+<li>ls   ： 查看目录内容<ul>
+<li>l ：查看详细信息</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>a ：查看所有文件（隐藏）<br>  man ：manual ： 手工，帮助 ，帮助命令，好比windows help<br>命令： man ls</li>
+</ul>
+<ol start="2">
+<li>mkdir ：创建目录<br>  Desktop：<ul>
+<li>java<ul>
+<li>JEE ： aa.txt  bb.txt  </li>
+<li>Android</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cd  切换目录<ul>
+<li>cd ..  记得要加空格</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>cd ./java  进入当前目录的子目录</li>
+<li>cd ../xxx  进入上一级目录的子目录<br> tab ：自动补全</li>
+</ul>
+<ol start="4">
+<li>touch  ：创建一个空白的普通文件<br>touch aa.txt </li>
+<li>echo  :把内容重定向到指定的文件中 ，有则打开，无则创建</li>
+<li>cat、more  ：查看文件内容<ul>
+<li>cat ：查看文件内容</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>more ：分页查看文件内容，按空格键换页</li>
+</ul>
+<ol start="7">
+<li>cp、mv、rm   <ul>
+<li>cp ：复制<br>cp bj.txt ./java/jee</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>mv ：剪切、重命名</p>
+<ol>
+<li>剪切 ：mv aa.txt ../android/</li>
+<li>重命名 ：假如剪切的文件 存放在同一个目录中 ，则是重命名<br> mv bb.txt cc.txt</li>
+</ol>
+</li>
+<li><p>rm ：删除文件或者文件夹<br>-f ： 假如要删除的文件不存在，也不提示<br>-i ： 删除前提示 ，默认不删除，要删除，输入y<br>-d ： 删除空白目录<br>-r ：递归删除</p>
+</li>
+</ul>
+<ol start="8">
+<li>wc ：word count ：统计字符数<br> 154  233 3418 </li>
+</ol>
+<ul>
+<li>154 ：行数</li>
+<li>233 ：单词数</li>
+<li>3418 ：字符数<br>命令： wc bj.txt</li>
+</ul>
+<ol start="9">
+<li>ln :创建连接文件<ul>
+<li>默认创建的是硬连接，好比复制 ，但是两个文件会同步<br>命令：ln ./java/android/aa.txt  aaa</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>s ：创建的是软连接</li>
+</ul>
+<ol start="10">
+<li><p>pwd   ：查看当前目录的绝对路径 </p>
+</li>
+<li><p>管道命令 |<br>命令： ls -la | wc </p>
+</li>
+<li><p>重定向</p>
+<ul>
+<li><blockquote>
+<p>:覆盖模式<br>命令：  echo “ww”&gt;aaa</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><blockquote>
+<blockquote>
+<p>：追加模式<br>命令： echo “ww”&gt;&gt;aaa</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<ol start="13">
+<li><p>passwd   :设置密码  ，ubuntu默认 root账号是没有开启 ，只要设置root密码即可开启<br>sudo passwd root</p>
+</li>
+<li><p>su  切换目录<br>su root<br>root用户切换到其他账号不需要密码<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62</p>
+</li>
+<li><p>linux 系统命令</p>
+</li>
+<li><p>stat ：查看文件的详细信息<br>stat bj.txt</p>
+</li>
+<li><p>who与whoami<br>who : 查看在线的用户<br>whoami ：查看当前自己的用户</p>
+</li>
+<li><p>hostname ： 显示主机名<br>hostname</p>
+</li>
+<li><p>uname ：显示系统信息</p>
+</li>
+</ol>
+<p>-a ：显示完整的系统信息</p>
+<p> 5.top ：显示当前耗时的进行的信息 ，每3秒刷新一次<br>     cltr+c 中断<br> 6.ps ：显示当前进程的快照 </p>
+<ul>
+<li>axu</li>
+</ul>
+<p> 7.du ：显示文件的大小信息<br> 8.df ：磁盘使用情况  disk free<br> 9.ifconfig ：查看或者配置网卡信息 ，好比windows 的ipconfig<br>    ipv4：32位  2-32次方     ipv6  128位     是 ipv4  2-96次方倍数<br>设置虚拟机ip地址：</p>
+<ol>
+<li><p>设置vmware的连接方式</p>
+<ul>
+<li>共享宿主机的ip地址，在网上邻居找不到</li>
+<li>桥接方式，需要单独设置ip，可以在网上邻居查找</li>
+</ul>
+</li>
+<li><p>图形界面设置ip地址<br> edit connection –》ipv4–》manual（手工设置）–》add  （ip地址，子网掩码）<br> 3.命令方式设置ip地址<br>静态设置ip：<br>sudo ifconfig eth0 192.168.15.122 netmask 255.255.255.0 </p>
+</li>
+<li><p>ping  测试与目标主机连接情况</p>
+</li>
+</ol>
+<p> 11.clear  ： 清除屏幕  windows： cls<br> 12.man  ：帮助命令<br>     man 命令<br> 13.kill  ：杀死进程<br>    kill  pid<br> 14.netstat  ：网络连接详细信息</p>
+<ol start="15">
+<li>useradd <ul>
+<li>查看用户信息<br>sudo cat /etc/passwd<br>itcast:x:1000:1000:UbuntuA,,,:/home/itcast:/bin/bash</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>itcast:用户名</p>
+</li>
+<li><p>x ：密码 ：已经加密 ，密码存放在  /etc/shadow </p>
+</li>
+<li><p>1000: 账号id ，userId</p>
+</li>
+<li><p>1000： 组id ，group id</p>
+<ul>
+<li>UbuntuA,,,  ：账号描述</li>
+<li>/home/itcast ：该账号存放文件的默认位置  ~</li>
+</ul>
+</li>
+<li><p>/bin/bash：该用户的shell脚本的解析方式  ，sh 、bash、rbash</p>
+<ul>
+<li>创建用户<br>sudo useradd lijun -d  /home/lijun   -s /bin/bash </li>
+</ul>
+</li>
+<li><p>d :指定该用户的home 路径 </p>
+</li>
+<li><p>s ：该用户的shell解析方式<br>步骤：</p>
+<ol>
+<li>创建 /home/lijun 目录</li>
+<li>执行 useradd 命令</li>
+<li>用 passwd 设置密码</li>
+<li>su 切换用户<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>五、打包、压缩文件<br>windows ： zip、rar<br>linux ：gz ，bzip，zip</li>
+</ol>
+</li>
+</ul>
+<p> 1.tar :打包、拆包命令<br>    tar - cxzjvf  &lt;打包后的文件&gt;   &lt;欲打包的目录&gt;</p>
+<ul>
+<li><p>c ：创建的一个归档文件 ，即打包文件夹</p>
+</li>
+<li><p>x ：拆包</p>
+</li>
+<li><p>z ：以gzip 格式压缩，默认压缩倍数 6倍  （0-9）</p>
+</li>
+<li><p>j ：以bzip2格式压缩</p>
+</li>
+<li><p>v ：显示打包或者拆包的文件信息</p>
+</li>
+<li><p>f ： 后面紧接一个 归档文件</p>
+</li>
+<li><p>打包文件<br> tar -cvf news.tar  ./java   摘要  </p>
+</li>
+<li><p>拆包文件<br> tar -xvf news.tar</p>
+</li>
+</ul>
+<p> 2.gzip 、bzip2 压缩与解压<br>    1. 压缩文件<br>  gzip news.tar<br>2. 解压文件<br>  gzip -d news.tar.gz<br>    -d :解压<br> 3.打包及压缩 </p>
+<ul>
+<li>打包及压缩<br> tar -czvf news.tar.gz ./java</li>
+<li>拆包及压解缩<br> tar -xzvf  news.tar.gz<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>六、软件管理<br>windows ： .exe 安装 、卸载<br>安装： mysql.exe cc.exe<br>卸载 ： 该软件唯一的标识 ，包名 alibaba<br>android : <em>.apk 卸载 包名<br>red hat ：</em>.rpm<br>ubuntu : 对debian的升级 *.deb 格式</li>
+</ul>
+<p> 1.安装软件</p>
+<ul>
+<li>dpkg ：debian  package<br> 离线安装：<br>安装 ： sudo dpkg - i  &lt;文件名&gt;<br>-i ：install<br>命令：sudo dpkg -i ./tree_1.6.0-1_i386.deb<br>卸载 ： sudo dpkg - r  &lt;包名&gt;<br>-r ：remove<br>  命令：sudo dpkg -r tree</li>
+<li>apt-get  ：advance  package  tools<br>　　对dpkg命令的升级，在线安装<br>安装 ： sudo apt-get -install  &lt;包名&gt;<br>卸载 ： sudo apt-get -remove  &lt;包名&gt;</li>
+</ul>
+<p> 2.vim 软件  ：好比记事本 ，但是比记事本要强大  </p>
+<ol>
+<li>安装vim</li>
+<li>使用vim<br>操作模式：<ol>
+<li>一般模式 ，默认进入的一般模式，该模式不能编辑文档 ，只能查看<br>按 i（insert）  进入 插入模式 </li>
+<li>编辑模式、插入模式<br> 该模式可以编辑文档，按esc 退出插入模式，进入到一般模式 </li>
+<li>命令模式 ：在 一般模式中按：进入命令模式<ul>
+<li>q： 安全退出，当没有操作该文档，则直接按q退出vim </li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>q！：当修改了内容，但是不想保存，则q！强制退出</li>
+<li>wq ：保存退出</li>
+<li>set number 显示行号</li>
+<li>set nonumber 取消行号显示</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shangningsimida.github.io/2021/01/31/linux%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/" data-id="ckkkqujb000006kvfcawfgjn1" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/01/31/%E7%AE%97%E6%B3%95%E6%8A%A5%E5%91%8A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/24/%E7%AE%97%E6%B3%95%E5%91%A8%E6%8A%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/31/%E7%AE%97%E6%B3%95%E6%8A%A5%E5%91%8A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/31/linux%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/24/%E7%AE%97%E6%B3%95%E5%91%A8%E6%8A%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/23/%E5%AD%A6%E4%B9%A0%E6%8A%A5%E5%91%8A/">学习报告</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 shangningsimida<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
